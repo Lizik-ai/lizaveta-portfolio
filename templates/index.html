@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Елизавета Ломако | Web Developer</title>
+    <!-- Подключаем современный ИТ-шрифт -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <!-- Иконки для контактов и преимуществ -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=4">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="site-header">
+        <div class="logo">EL.</div>
+        <div class="lang-switch">
+            <button id="btn-ru" class="lang-btn active">RU</button>
+            <button id="btn-en" class="lang-btn">EN</button>
+        </div>
+    </header>
+
+    <!-- 1. ГЛАВНЫЙ ЭКРАН -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <!-- Ваше крупное фото по центру экрана -->
+            <div class="avatar-container">
+                <img src="{{ url_for('static', filename='avatar.jpg') }}" alt="Елизавета Ломако" class="avatar-img" style="width: 350px !important; height: 350px !important;">
+            </div>
+            <div class="tech-badge">Python & Web Developer</div>
+            <h1 class="main-title" data-ru="ЕЛИЗАВЕТА ЛОМАКО" data-en="ELIZAVETA LOMAKO">ЕЛИЗАВЕТА ЛОМАКО</h1>
+            <p class="main-subtitle" data-ru="Разработка адаптивных сайтов, бэкенда и веб-приложений" data-en="Development of adaptive websites, backend and web applications">Разработка адаптивных сайтов, бэкенда и веб-приложений</p>
+            <button class="cta-button" id="go-to-portfolio" data-ru="Смотреть проекты &rarr;" data-en="View Projects &rarr;">Смотреть проекты &rarr;</button>
+        </div>
+        <div class="card-line-left"></div>
+        <div class="card-line-right"></div>
+    </section>
+    <!-- 2. БЛОК ПРЕИМУЩЕСТВ -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title" data-ru="✨ Главное обо мне" data-en="✨ About Me">✨ Главное обо мне</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-code"></i>
+                    <h4 data-ru="Веб-разработчик" data-en="Web Developer">Веб-разработчик</h4>
+                    <p data-ru="Создаю удобные и современные сайты." data-en="Creating comfortable and modern websites.">Создаю удобные и современные сайты.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-layer-group"></i>
+                    <h4 data-ru="Frontend & Backend" data-en="Frontend & Backend">Frontend & Backend</h4>
+                    <p data-ru="Работаю с деталями и системой." data-en="Working with details and systemic approach.">Работаю с деталями и системой.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4 data-ru="Постоянно учусь" data-en="Always Learning">Постоянно учусь</h4>
+                    <p data-ru="Изучаю новое и развиваюсь каждый день." data-en="Studying new tools and evolving every day.">Изучаю новое и развиваюсь каждый день.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-heart"></i>
+                    <h4 data-ru="Люблю чистый код" data-en="Clean Code Lover">Люблю чистый код</h4>
+                    <p data-ru="Пишу понятно, структурно и с душой." data-en="Writing clear, structured and passionate code.">Пишу понятно, структурно и с душой.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h4 data-ru="Нацелена на результат" data-en="Result Oriented">Нацелена на результат</h4>
+                    <p data-ru="Ценю эффективность и качество." data-en="Valuing efficiency and top-tier quality.">Ценю эффективность и качество.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h4 data-ru="Делаю для людей" data-en="Built for People">Делаю для людей</h4>
+                    <p data-ru="Создаю решения, которые упрощают жизнь." data-en="Creating solutions that make life simpler.">Создаю решения, которые упрощают жизнь.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. СЕКЦИЯ ПОРТФОЛИО (3 топовых кейса) -->
+    <section class="portfolio-section" id="portfolio">
+        <div class="container">
+            <h2 class="section-title" data-ru="🚀 Выполненные проекты" data-en="🚀 Production Projects">🚀 Выполненные проекты</h2>
+            
+            <div style="display: flex; flex-direction: column; gap: 50px;">
+                
+                <!-- Кейс 1: ТРЕКЕР СВИДАНИЙ -->
+                <div class="case-study-card">
+                    <div class="case-image" style="background-image: url('{{ url_for('static', filename='case-dating.jpg') }}');"></div>
+                    <div class="case-text">
+                        <span class="case-category" data-ru="Интерактивное веб-приложение" data-en="Interactive Web Application">Интерактивное веб-приложение</span>
+                        <h3 data-ru="Веб-приложение для отслеживания свиданий" data-en="Web Application for Date Tracking">Веб-приложение для отслеживания свиданий</h3>
+                        <div class="case-tags"><span>Python / Flask</span><span>UI/UX Design</span><span>Календарь</span><span>Mobile-Responsive</span></div>
+                        <p data-ru="Добавляй встречи с датой, местом и заметками, ставь оценки и фильтруй по статусу — всё в удобном календаре и с мобильной версией." data-en="Add meetings with date, location, and notes, leave ratings, and filter by status — all within a user-friendly calendar featuring a fully responsive mobile layout.">Добавляй встречи с датой, местом и заметками, ставь оценки и фильтруй по статусу — всё в удобном календаре и с мобильной версией.</p>
+                    </div>
+                </div>
+                <!-- Кейс 2: ТГ БОТ ШАУРМЫ -->
+                <div class="case-study-card">
+                    <div class="case-image" style="background-image: url('{{ url_for('static', filename='case-shawarma.jpg') }}');"></div>
+                    <div class="case-text">
+                        <span class="case-category" data-ru="Автоматизация бизнеса / Telegram Bot" data-en="Business Automation / Telegram Bot">Автоматизация бизнеса / Telegram Bot</span>
+                        <h3 data-ru="Telegram-бот для приёма заказов шаурмы" data-en="Telegram Bot for Shawarma Ordering">Telegram-бот для приёма заказов шаурмы</h3>
+                        <div class="case-tags"><span>aiogram / Telebot</span><span>Asyncio</span><span>Inline Menu</span><span>Order Automation</span></div>
+                        <p data-ru="Собирает заказ, отправляет менеджеру в Telegram, заменяет сайт и упрощает обработку. Быстро, просто, без лишних шагов." data-en="Collects the order, routes it to the manager via Telegram, fully replaces a website, and streamlines order processing. Fast, simple, and frictionless.">Собирает заказ, отправляет менеджеру в Telegram, заменяет сайт и упрощает обработку. Быстро, просто, без лишних шагов.</p>
+                    </div>
+                </div>
+
+                <!-- Кейс 3: REMONTMASHIN -->
+                <div class="case-study-card">
+                    <div class="case-image" style="background-image: url('{{ url_for('static', filename='case-automash.jpg') }}');"></div>
+                    <div class="case-text">
+                        <span class="case-category" data-ru="Многостраничный автопортал" data-en="Multi-page Auto Portal">Многостраничный автопортал</span>
+                        <h3 data-ru="Автопортал для СТО «REMONTMASHIN»" data-en='Automotive Portal for "REMONTMASHIN" Service Station'>Автопортал для СТО «REMONTMASHIN»</h3>
+                        <div class="case-tags"><span>Flask / Python</span><span>Dark Mode</span><span>Mobile-First</span><span>Asynchronous Forms</span></div>
+                        <p data-ru="Премиальный кинематографический дизайн в темных тонах. Полностью адаптивная сетка под мобильные телефоны, обеспечивающая мгновенную скорость загрузки. На бэкенде развернута глубокая система на Flask/Python, включающая в себя 16 индивидуальных разделов услуг, интерактивный модуль выбора среди 54 марок авто (аккордеон), анимированный FAQ и автономную форму онлайн-записи без перезагрузки экрана." data-en="Premium cinematic Dark Mode design. Fully mobile-responsive layout built with a Mobile-First approach for maximum performance. Powered by robust Flask/Python server-side architecture featuring 16 separate service chapters, an interactive 54-brand vehicle accordion selector, smooth animated FAQ cards, and an asynchronous instant booking engine without page reload.">Премиальный кинематографический дизайн в темных тонах. Полностью адаптивная сетка под мобильные телефоны, обеспечивающая мгновенную скорость загрузки. На бэкенде развернута глубокая система на Flask/Python, включающая в себя 16 индивидуальных разделов услуг, интерактивный модуль выбора среди 54 марок авто (аккордеон), анимированный FAQ и автономную форму онлайн-записи без перезагрузки экрана.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ПОДВАЛ И КОНТАКТЫ -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <h2 data-ru="Начнем проект?" data-en="Let's build something together?">Начнем проект?</h2>
+                <p data-ru="Свяжитесь со мной удобным способом для обсуждения вашей задачи. Гарантирую реальный подход и чистый код." data-en="Reach out via any preferred channel to discuss your technical specifications. Real approach and clean code guaranteed.">Свяжитесь со мной удобным способом для обсуждения вашей задачи. Гарантирую реальный подход и чистый код.</p>
+            </div>
+            <div class="footer-right">
+                <a href="tel:+375293759233" class="footer-link"><i class="fas fa-phone-alt"></i> +375 (29) 375-92-33</a>
+                <a href="https://t.me" target="_blank" class="footer-link"><i class="fab fa-telegram-plane"></i> Telegram (@soul_splits)</a>
+                <a href="https://instagram.com" target="_blank" class="footer-link"><i class="fab fa-instagram"></i> Instagram (@lizix_25)</a>
+                <div class="footer-geo"><i class="fas fa-map-marker-alt"></i> <span data-ru="Минск, Беларусь" data-en="Minsk, Belarus">Минск, Беларусь</span></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

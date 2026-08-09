@@ -1,0 +1,423 @@
+/* Обнуление и базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0b0f19;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Шапка сайта */
+.site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    color: #ff3344;
+    letter-spacing: 2px;
+}
+
+.lang-switch {
+    display: flex;
+    gap: 8px;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 12px;
+    transition: 0.3s;
+    border-radius: 4px;
+}
+
+.lang-btn.active, .lang-btn:hover {
+    background: #ff3344;
+    border-color: #ff3344;
+}
+
+/* 1. ИДЕАЛЬНОЕ ЦЕНТРИРОВАНИЕ ГЛАВНОГО ЭКРАНА */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    background-image: linear-gradient(rgba(11, 15, 25, 0.85), rgba(11, 15, 25, 0.95)), url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Центрирует всё строго по вертикали сайта */
+    text-align: center;  /* Центрирует все тексты по горизонтали */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Выстраивает круг, бейдж, заголовок ровно по одной центральной оси */
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+/* Контейнер для крупной аватарки с увеличенным отступом */
+.avatar-container {
+    margin-bottom: 40px; /* Увеличили отступ, чтобы элементам под фото дышалось свободно */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Сама картинка внутри контейнера - строго по центру и идеально круглая */
+.avatar-img {
+    width: 240px !important;
+    height: 240px !important;
+    border-radius: 50% !important;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid #ff3344;
+    box-shadow: 0 0 25px rgba(255, 51, 68, 0.6);
+    display: block;
+    margin: 0 auto;
+}
+
+/* Красный бейдж Python & Web Developer строго по центру под фото */
+.tech-badge {
+    display: inline-block;
+    background: rgba(255, 51, 68, 0.1);
+    border: 1px solid #ff3344;
+    color: #ff3344;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 20px;
+    margin: 0 auto 20px auto; /* Выравнивает по центру и дает отступ вниз к имени */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.main-title {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.main-subtitle {
+    font-size: 18px;
+    color: #a0aec0;
+    max-width: 600px;
+    margin: 0 auto 35px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.cta-button {
+    background: #ff3344;
+    color: #fff;
+    border: none;
+    padding: 16px 36px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 51, 68, 0.4);
+}
+
+.cta-button:hover {
+    background: #e02434;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 51, 68, 0.6);
+}
+
+/* Декоративные линии внизу экрана как на визитке */
+.card-line-left, .card-line-right {
+    position: absolute;
+    bottom: 0;
+    height: 6px;
+    width: 25%;
+    background: linear-gradient(90deg, transparent, #ff3344);
+}
+.card-line-left { left: 5%; border-radius: 3px 0 0 3px; }
+.card-line-right { right: 5%; background: linear-gradient(270deg, transparent, #ff3344); border-radius: 0 3px 3px 0; }
+
+/* 2. БЛОК ПРЕИМУЩЕСТВ С ФОТО */
+.features-section {
+    padding: 80px 0;
+    background: #0f1422;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: #141b2d;
+    padding: 30px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    border-color: rgba(255, 51, 68, 0.3);
+    transform: translateY(-5px);
+}
+
+.feature-card i {
+    font-size: 28px;
+    color: #ff3344;
+    margin-bottom: 20px;
+}
+
+.feature-card h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #a0aec0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ЗАГОЛОВКИ СЕКЦИЙ */
+.section-title {
+    font-size: 32px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+}
+
+/* 3. КАРТОЧКА ПОРТФОЛИО */
+.portfolio-section {
+    padding: 100px 0;
+}
+
+.case-study-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #141b2d;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.case-image {
+    background-size: cover;
+    background-position: center;
+    min-height: 350px;
+}
+
+.case-text {
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.case-category {
+    color: #ff3344;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.case-text h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.case-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.case-tags span {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px 12px;
+    font-size: 12px;
+    border-radius: 4px;
+    color: #cbd5e0;
+}
+
+.case-text p {
+    color: #a0aec0;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* 4. ПРАЙС-ЛИСТ */
+.pricing-section {
+    padding: 100px 0;
+    background: #0f1422;
+}
+
+.prices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.price-card {
+    background: #141b2d;
+    padding: 40px 30px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    position: relative;
+}
+
+.price-card.premium {
+    border-color: #ff3344;
+    box-shadow: 0 4px 20px rgba(255, 51, 68, 0.15);
+}
+
+.price-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.price-tag {
+    font-size: 36px;
+    font-weight: 900;
+    color: #ff3344;
+    margin-bottom: 5px;
+}
+
+.price-time {
+    font-size: 13px;
+    color: #cbd5e0;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.price-card p {
+    color: #a0aec0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Дополнительные условия */
+.extra-conditions {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    background: #141b2d;
+    padding: 30px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.extra-item {
+    font-size: 14px;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.extra-item:last-child { margin-bottom: 0; }
+.extra-item strong { color: #ff3344; margin-right: 5px;}
+.extra-item span { color: #cbd5e0; }
+
+.payment-note {
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.8;
+    background: rgba(255, 51, 68, 0.05);
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 4px solid #ff3344;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 5. ПОДВАЛ И КОНТАКТЫ */
+.site-footer {
+    padding: 80px 0;
+    background: #0b0f19;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-left { flex: 1; min-width: 300px; }
+.footer-left h2 { font-size: 28px; margin-bottom: 15px; font-weight: 900; }
+.footer-left p { color: #a0aec0; font-size: 14px; line-height: 1.6; max-width: 500px; }
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 250px;
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-link i { color: #ff3344; font-size: 18px; width: 20px; }
+.footer-link:hover { color: #ff3344; }
+.footer-geo { display: flex; align-items: center; gap: 12px; color: #a0aec0; font-size: 14px; }
+.footer-geo i { color: #ff3344; font-size: 18px; width: 20px; }
+
+/* АДАПТИВНОСТЬ ПОД МОБИЛЬНЫЕ */
+@media (max-width: 768px) {
+    .main-title { font-size: 32px; }
+    .main-subtitle { font-size: 15px; }
+    .case-study-card { grid-template-columns: 1fr; }
+    .footer-content { flex-direction: column; text-align: center; }
+    .footer-right { align-items: center; }
+    .section-title { font-size: 26px; }
+    .avatar-img { width: 120px; height: 120px; margin: 0 auto; }
+}
